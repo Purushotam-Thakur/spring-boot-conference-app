@@ -11,9 +11,11 @@ public class UseLatestVersionCondition implements Condition {
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
         try {
             String isFlagEnabled = context.getEnvironment().getProperty("test.use.latest");
+            System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
             return isFlagEnabled.equals("true");
         }
         catch (Exception ex){
+            System.out.println("-------------------------------------------------------------");
             System.out.println(ex);
             return false;
         }
